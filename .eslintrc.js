@@ -1,27 +1,32 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaFeatures: {
       jsx: true, // Allows for the parsing of JSX
-      arrowFunctions: true
+      arrowFunctions: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint'
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    quotes: ['error', 'single']
-  }
-}
+    'prettier/prettier': [
+      'error',
+      { endOfLine: 'auto' },
+      { usePrettierrc: true },
+    ],
+  },
+};
